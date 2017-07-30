@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 chart-data-form">
+      <input-chart-data [chartFormData]="chartDataModel" (chartFormDataChange)="chartDataModelChange($event)"></input-chart-data>
+    </div>
+    <div class="col-xs-6">
+      <chart [options]="chartOptions"></chart>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12"></div>
+  </div>
+</div>

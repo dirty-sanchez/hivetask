@@ -25,7 +25,11 @@
 
       // other libraries
       'rxjs':                      'npm:rxjs',
-      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
+      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+
+      // highcharts
+      'angular2-highcharts': 'node_modules/angular2-highcharts',
+      'highcharts': 'node_modules/highcharts',
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -38,6 +42,14 @@
         }
       },
       rxjs: {
+        defaultExtension: 'js'
+      },
+      highcharts: {
+        main: './highcharts.js',
+        defaultExtension: 'js'
+      },
+      'angular2-highcharts': {
+        main: './index.js',
         defaultExtension: 'js'
       }
     }

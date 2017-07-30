@@ -1,0 +1,25 @@
+<form [formGroup]="formGroup" class="form-horizontal">
+  <div class="form-group">
+    <label for="name">Select a lodash method</label>
+    <select id="name" name="name" class="form-control" formControlName="name" required (change)="generateData()">
+      <option *ngFor="let method of methods" [value]="method">{{ method }}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="dataInput">Enter input for a function or press "Generate!":</label>
+    <button (click)="generateData()">Generate!</button>:
+    <textarea id="dataInput" name="dataInput" class="form-control" formControlName="dataInput"></textarea>
+  </div>
+
+  <div class="form-group" [ngClass]="{'disabled': isDataObject()}">
+    <label for="funcInput">Enter an expression for callback function. Use x as variable name. (x * x, for example)</label>
+    <textarea id="funcInput" name="funcInput" class="form-control" formControlName="funcInput"></textarea>
+  </div>
+
+  <div *ngIf="!formGroup.valid" class="alert alert-danger">
+    <ul>
+      <li *ngFor="let errorText of formErrors">{{ errorText }}</li>
+    </ul>
+  </div>
+</form>
